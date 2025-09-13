@@ -42,6 +42,7 @@ async def test_mock_activity(client: Client):
         task_queue=task_queue_name,
         workflows=[GreetingWorkflow],
         activities=[compose_greeting_mocked],
+        debug_mode=True
     ):
         assert "Hello, World from mocked activity!" == await client.execute_workflow(
             GreetingWorkflow.run,

@@ -29,6 +29,7 @@ def compose_greeting(input: ComposeGreetingInput) -> str:
 class GreetingWorkflow:
     @workflow.run
     async def run(self, name: str) -> str:
+        breakpoint()
         workflow.logger.info("Running workflow with parameter %s" % name)
         return await workflow.execute_activity(
             compose_greeting,
